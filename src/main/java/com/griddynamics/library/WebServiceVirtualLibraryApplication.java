@@ -1,4 +1,4 @@
-package com.griddynamics.olga.library;
+package com.griddynamics.library;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

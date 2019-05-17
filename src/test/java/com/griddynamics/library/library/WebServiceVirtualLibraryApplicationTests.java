@@ -1,4 +1,4 @@
-package com.griddynamics.olga.library;
+package com.griddynamics.library.library;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
