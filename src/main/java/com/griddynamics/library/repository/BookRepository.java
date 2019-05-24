@@ -1,10 +1,10 @@
 package com.griddynamics.library.repository;
 
+import com.griddynamics.library.dao.BookDao;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 
-public interface BookRepository extends JpaRepository<Book, Long> { // CrudRepository ???
+public interface BookRepository extends JpaRepository<BookDao, Long> { // CrudRepository ?
 
 
 }
@@ -13,4 +13,4 @@ public interface BookRepository extends JpaRepository<Book, Long> { // CrudRepos
 // (Data Access Object) component in the persistence layer.
 
 //imported the JpaRepository package to use that repository in the BookRepository interface
-// by connecting most recently coded Book model to do CRUD operations.
+// by connecting most recently coded BookDao model to do CRUD operations.

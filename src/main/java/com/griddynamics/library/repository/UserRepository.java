@@ -1,5 +1,8 @@
 package com.griddynamics.library.repository;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+import com.griddynamics.library.dao.UserDao;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UserRepository extends JpaRepository<UserDao, Long> {
 
 }

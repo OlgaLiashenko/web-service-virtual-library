@@ -1,76 +1,93 @@
 package com.griddynamics.library.controllers;
 
+import com.griddynamics.library.models.Book;
+import com.griddynamics.library.service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
 public class BookController {
 
+    private final BookService bookService;
 
+    @Autowired
+    public BookController(BookService bookService) {
+        this.bookService = bookService;
+    }
 
     // Get all books
     @GetMapping("/books")
-    public List<Book> getAllNotes() {
-        return ;
+    public ResponseEntity<List<Book>> getAllNotes() {
+        return new ResponseEntity<List<Book>>(bookService.getAllNotes(), HttpStatus.OK);
     }
 
     // Get a single book by id
     @GetMapping("/books/{bookId}")
     public Book getBookById() {
-        return ;
+        return null;
     }
 
     // Get a title of most popular book
     @GetMapping("/books/popular/")
     public Book getPopularBook() {
-        return 0;
+        return null;
     }
 
     // Get books by author
     @GetMapping("/books/author")
     public List<Book> getBooksByAuthor() {
-        return 0;
+        return null;
     }
 
     // Get list of books by genre
     @GetMapping("/books/genre")
     public List<Book> getBooksByGenre() {
-        return 0;
+        return null;
     }
 
 
     // Create a new book note
     @PostMapping("/books")
     public Book createNote(){
-        return 0;
+        return null;
     }
 
     // Update a book note
     @PutMapping("/books/")
     public Book updateBook(){
-        return 0;
+        return null;
     }
 
 
     // Update book read pages
     @PutMapping("/books/pages")
     public Book updateReadBookPages(){
-        return 0;
+        return null;
     }
 
     // Make Gift a book to another user
     @PutMapping("/books/gift")
     public Book makeGift(@PathVariable String bookId){
-        return 0;
+        return null;
     }
 
 
     // Delete book by id
     @DeleteMapping("/books/{bookId}")
-    public deleteBookById(){
-        return ;
+    public void deleteBookById(){
+        return;
     }
 
+
+    @GetMapping("/")
+    public String homeMapping() {
+        return "Hello!";
+    }
 
 
 }
