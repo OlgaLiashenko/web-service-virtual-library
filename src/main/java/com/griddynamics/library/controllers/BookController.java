@@ -26,10 +26,10 @@ public class BookController {
         return new ResponseEntity<List<Book>>(bookService.getAllNotes(), HttpStatus.OK);
     }
 
-    // Get a single book by id
+    // Get a book title by book id
     @GetMapping("/books/{bookId}")
-    public Book getBookById() {
-        return null;
+    public ResponseEntity<Book> getBookById(@PathVariable long bookId) {
+        return new ResponseEntity<Book>(bookService.getBookById(bookId), HttpStatus.OK);
     }
 
     // Get a title of most popular book
@@ -53,33 +53,33 @@ public class BookController {
 
     // Create a new book note
     @PostMapping("/books")
-    public Book createNote(){
+    public Book createNote() {
         return null;
     }
 
     // Update a book note
     @PutMapping("/books/")
-    public Book updateBook(){
+    public Book updateBook() {
         return null;
     }
 
 
     // Update book read pages
     @PutMapping("/books/pages")
-    public Book updateReadBookPages(){
+    public Book updateReadBookPages() {
         return null;
     }
 
     // Make Gift a book to another user
     @PutMapping("/books/gift")
-    public Book makeGift(@PathVariable String bookId){
+    public Book makeGift(@PathVariable String bookId) {
         return null;
     }
 
 
     // Delete book by id
     @DeleteMapping("/books/{bookId}")
-    public void deleteBookById(){
+    public void deleteBookById() {
         return;
     }
 

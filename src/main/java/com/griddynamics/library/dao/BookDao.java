@@ -30,5 +30,11 @@ public class BookDao {
     private List<OrderDao> orders;
 
     @ManyToMany
+    @JoinTable(name = "book_genres",
+            joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "genre_id", referencedColumnName = "genre_id"))
     private List<GenresDao> genres;
+
+
+
 }

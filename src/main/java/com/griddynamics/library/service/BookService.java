@@ -11,6 +11,8 @@ public interface BookService {
 
     List<Book> getAllNotes();
 
-    Book getBookById(long id);
+    Book getBookById(long bookId);
+
+
 
 }
