@@ -15,7 +15,7 @@ public class GenresDao {
     @GeneratedValue
     long genre_id;
 
-    String genre_name;
+    String genreName;
 
     @ManyToMany
     List<BookDao> books;

@@ -11,7 +11,8 @@ import java.util.List;
 @Data
 public class Book {
     private long book_id;
-    private Author authorDao;
+   // private Author authorDao;
+    private String author_name;
     private String title;
     private Date publication_date;
     private int pages;

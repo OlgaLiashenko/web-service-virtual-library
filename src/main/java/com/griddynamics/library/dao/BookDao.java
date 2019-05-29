@@ -16,6 +16,7 @@ public class BookDao {
     private long book_id;
 
     @ManyToOne
+    @MapsId("author_name")
     @JoinColumn(name = "author")
     private AuthorDao authorDao;
 
@@ -33,7 +34,5 @@ public class BookDao {
             joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "book_id"),
             inverseJoinColumns = @JoinColumn(name = "genre_id", referencedColumnName = "genre_id"))
     private List<GenresDao> genres;
-
-
 
 }
