@@ -7,7 +7,6 @@ import java.sql.Date;
 import java.util.List;
 
 @Getter
-
 @Table(name = "book")
 @Entity
 public class BookDao {

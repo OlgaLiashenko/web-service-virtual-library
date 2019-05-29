@@ -2,8 +2,6 @@ package com.griddynamics.library.models;
 
 import lombok.Getter;
 
-import java.util.List;
-
 @Getter
 
 //@Data
@@ -13,5 +11,5 @@ public class Author {
 
     String author_name;
 
-    List<Book> books;
+  //  List<Book> books;
 }

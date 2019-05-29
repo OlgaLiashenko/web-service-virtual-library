@@ -1,6 +1,5 @@
 package com.griddynamics.library.models;
 
-import com.griddynamics.library.dao.AuthorDao;
 import lombok.Data;
 
 import java.sql.Date;
@@ -12,7 +11,7 @@ import java.util.List;
 @Data
 public class Book {
     private long book_id;
-    private AuthorDao authorDao;
+    private Author authorDao;
     private String title;
     private Date publication_date;
     private int pages;
