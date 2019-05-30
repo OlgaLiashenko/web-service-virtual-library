@@ -6,7 +6,6 @@ import javax.persistence.*;
 import java.util.List;
 
 @Getter
-
 @Entity
 @Table(name = "genres")
 public class GenresDao {
@@ -19,6 +18,4 @@ public class GenresDao {
 
     @ManyToMany
     List<BookDao> books;
-
-
 }

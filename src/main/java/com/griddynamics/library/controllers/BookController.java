@@ -23,7 +23,7 @@ public class BookController {
     // Get all books
     @GetMapping("/books")
     public ResponseEntity<List<Book>> getAllNotes() {
-        return new ResponseEntity<List<Book>>(bookService.getAllNotes(), HttpStatus.OK);
+        return new ResponseEntity<List<Book>>(bookService.getAllBookNotes(), HttpStatus.OK);
     }
 
     // Get a book title by book id

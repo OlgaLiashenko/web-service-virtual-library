@@ -5,8 +5,6 @@ import lombok.Data;
 import java.sql.Date;
 import java.util.List;
 
-//@Getter
-//@Setter
 
 @Data
 public class Book {
@@ -17,5 +15,4 @@ public class Book {
     private Date publication_date;
     private int pages;
     private List<String> genres;
-
 }
