@@ -6,7 +6,7 @@ import java.util.List;
 
 @Getter
 public class Genres {
-    long genre_id;
-    String genre_name;
+    long genreId;
+    String genreName;
     List<Book> books;
 }

@@ -8,11 +8,11 @@ import java.util.List;
 
 @Data
 public class Book {
-    private long book_id;
+    private long bookId;
    // private Author authorDao;
-    private String author_name;
+    private String authorName;
     private String title;
-    private Date publication_date;
+    private Date publicationDate;
     private int pages;
     private List<String> genres;
 }

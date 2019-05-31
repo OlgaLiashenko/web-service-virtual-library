@@ -15,7 +15,7 @@ public class BookMapper {
         Book booksWithGenres = modelMapper.map(dao, Book.class);
         List<String> genres = dao.getGenres().stream().map(GenresDao::getGenreName).collect(Collectors.toList());
         booksWithGenres.setGenres(genres);
-        booksWithGenres.setAuthor_name(dao.getAuthorDao().getAuthor_name());
+        booksWithGenres.setAuthorName(dao.getAuthorDao().getAuthorName());
         return booksWithGenres;
     }
 

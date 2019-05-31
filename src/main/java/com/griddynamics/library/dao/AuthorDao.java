@@ -13,9 +13,11 @@ public class AuthorDao {
 
     @Id
     @GeneratedValue
-    long author_id;
+    @Column(name = "author_id")
+    long authorId;
 
-    String author_name;
+    @Column(name = "author_name")
+    String authorName;
 
     @OneToMany(mappedBy = "authorDao")
     List<BookDao> books;

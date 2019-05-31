@@ -9,9 +9,11 @@ public class UserDao {
 
     @Id
     @GeneratedValue
-    long user_id;
+    @Column(name = "user_id")
+    long userId;
 
-    String user_name;
+    @Column(name = "user_name")
+    String userName;
 
     String country;
 

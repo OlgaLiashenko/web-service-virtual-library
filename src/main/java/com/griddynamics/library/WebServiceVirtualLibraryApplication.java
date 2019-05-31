@@ -8,6 +8,6 @@ public class WebServiceVirtualLibraryApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(WebServiceVirtualLibraryApplication.class, args);
-
 	}
+
 }

@@ -12,7 +12,8 @@ public class GenresDao {
 
     @Id
     @GeneratedValue
-    long genre_id;
+    @Column(name = "genre_id")
+    long genreId;
 
     String genreName;
 

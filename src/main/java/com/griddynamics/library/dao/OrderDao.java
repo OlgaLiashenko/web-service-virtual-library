@@ -10,17 +10,20 @@ import java.sql.Date;
 public class OrderDao {
     @Id
     @GeneratedValue
-    long order_id;
+    @Column(name = "order_id")
+    long orderId;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "userId")
     UserDao userDao;
 
     @ManyToOne
-    @JoinColumn(name = "book_id")
+    @JoinColumn(name = "bookId")
     BookDao bookDao;
 
-    Date order_date;
+    @Column(name = "order_date")
+    Date orderDate;
 
-    int read_on_page;
+    @Column(name = "read_on_page")
+    int readOnPage;
 }

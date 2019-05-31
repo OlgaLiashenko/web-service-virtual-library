@@ -26,7 +26,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<Book> getAllBookNotes() {
-        List<BookDao> daos = bookRepository.findAll();
+//        List<BookDao> daos = bookRepository.findAll();
 /*
         List<Book> result = new ArrayList<>();
         for (BookDao dao : daos) {
@@ -34,22 +34,24 @@ public class BookServiceImpl implements BookService {
             result.add(map);
         }
  */
-        List<Book> result = daos.stream()
+        return bookRepository.findAll().stream()
                 .map(BookMapper::mapBookGenreAndAuthor)
                 .collect(Collectors.toList());
-        return result;
     }
 
     @Override
-    public Book getBookById(long book_id) {
-        Optional<BookDao> entity = bookRepository.findById(book_id);
+    public Book getBookById(long bookId) {
+        Optional<BookDao> entity = bookRepository.findById(bookId);
         return entity.map(BookMapper::mapBookGenreAndAuthor).orElseThrow(EntityNotFoundException::new);
     }
 
     @Override
     public void deleteBookById(long bookId) {
         Optional<BookDao> entity = bookRepository.findById(bookId);
-        if (!entity.isPresent()) throw new IdNotFoundException(bookId);
+        if (!entity.isPresent()) {
+            throw new IdNotFoundException(bookId);
+        }
+
         bookRepository.delete(entity.get());
     }
 

@@ -13,16 +13,18 @@ public class BookDao {
 
     @Id
     @GeneratedValue
-    private long book_id;
+    @Column(name = "book_id")
+    private long bookId;
 
     @ManyToOne
-    @MapsId("author_name")
+    @MapsId("authorName")
     @JoinColumn(name = "author")
     private AuthorDao authorDao;
 
     private String title;
 
-    private Date publication_date;
+    @Column(name = "publication_date")
+    private Date publicationDate;
 
     private int pages;
 
