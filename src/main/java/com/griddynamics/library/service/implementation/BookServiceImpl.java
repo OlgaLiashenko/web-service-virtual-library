@@ -1,11 +1,11 @@
 package com.griddynamics.library.service.implementation;
 
 import com.griddynamics.library.dao.BookDao;
+import com.griddynamics.library.exceptions.IdNotFoundException;
 import com.griddynamics.library.mappers.BookMapper;
 import com.griddynamics.library.models.Book;
 import com.griddynamics.library.repository.BookRepository;
 import com.griddynamics.library.service.BookService;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +27,6 @@ public class BookServiceImpl implements BookService {
     @Override
     public List<Book> getAllBookNotes() {
         List<BookDao> daos = bookRepository.findAll();
-        ModelMapper modelMapper = new ModelMapper();
 /*
         List<Book> result = new ArrayList<>();
         for (BookDao dao : daos) {
@@ -47,6 +46,12 @@ public class BookServiceImpl implements BookService {
         return entity.map(BookMapper::mapBookGenreAndAuthor).orElseThrow(EntityNotFoundException::new);
     }
 
+    @Override
+    public void deleteBookById(long bookId) {
+        Optional<BookDao> entity = bookRepository.findById(bookId);
+        if (!entity.isPresent()) throw new IdNotFoundException(bookId);
+        bookRepository.delete(entity.get());
+    }
 
 }
 

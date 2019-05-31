@@ -10,7 +10,4 @@ public class WebServiceVirtualLibraryApplication {
 		SpringApplication.run(WebServiceVirtualLibraryApplication.class, args);
 
 	}
-
-
-
 }

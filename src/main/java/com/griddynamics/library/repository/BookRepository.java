@@ -4,8 +4,7 @@ import com.griddynamics.library.dao.BookDao;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface BookRepository extends JpaRepository<BookDao, Long> { // CrudRepository ?
-
+public interface BookRepository extends JpaRepository<BookDao, Long> {
 
 }
 
